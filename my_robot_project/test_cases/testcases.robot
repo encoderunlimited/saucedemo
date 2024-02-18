@@ -13,6 +13,7 @@ Verify Login Screen Password
 Verify the Login Button and Click on to the Button
     Wait Until Page Contains Element  id:login-button
     Click Button  id:login-button
+Verify the Next Screen After Click onto Login Button
     ${expected_url}=  Set Variable  https://www.saucedemo.com/inventory.html
     ${CURR_URL}=  Get Location
     Wait Until Keyword Succeeds  10x  3s  Should Be Equal  ${expected_url}  ${CURR_URL}
