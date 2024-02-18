@@ -20,5 +20,8 @@ SeleniumLibrary is a web testing library for Robot Framework. You can install it
 How to Run cases
     Run at once
         1. Navigate to the folder named test_cases 
-        2. run the command robot .\testcases.robot
+        2. run the command robot .\test.robot (by running this command you will see the report and log file in same folder)
+        3. if you want to see the log and report file in reports directory redirect to the folder results and run the command 
+                robot ..\test_cases\test.robot
+        
 
