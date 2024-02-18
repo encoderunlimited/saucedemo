@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.4 on win32)" generated="2024-02-18T18:28:17.841841" rpa="false" schemaversion="5">
+<suite id="s1" name="Testcases" source="C:\Users\Khalil\Desktop\saucedemo\my_robot_project\results\..\test_cases\testcases.robot">
+<test id="s1-t1" name="Open Chrome Browser" line="5">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-02-18T18:28:18.060996" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>https://www.saucedemo.com/</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-02-18T18:28:18.060996" elapsed="4.086107"/>
+</kw>
+<status status="PASS" start="2024-02-18T18:28:18.060996" elapsed="4.086107"/>
+</test>
+<test id="s1-t2" name="Verify Login Screen username" line="7">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id:user-name</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.149103" elapsed="0.011485"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-02-18T18:28:22.160588" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<arg>id:user-name</arg>
+<arg>standard_user</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.160588" elapsed="0.131514"/>
+</kw>
+<status status="PASS" start="2024-02-18T18:28:22.148103" elapsed="0.143999"/>
+</test>
+<test id="s1-t3" name="Verify Login Screen Password" line="10">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id:password</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.292102" elapsed="0.014322"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-02-18T18:28:22.306955" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
+<arg>id:password</arg>
+<arg>secret_sauce</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.306955" elapsed="0.103737"/>
+</kw>
+<status status="PASS" start="2024-02-18T18:28:22.292102" elapsed="0.118590"/>
+</test>
+<test id="s1-t4" name="Verify the Login Button and Click on to the Button" line="13">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id:login-button</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.412693" elapsed="0.011101"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-02-18T18:28:22.423794" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>id:login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.423794" elapsed="0.084274"/>
+</kw>
+<status status="PASS" start="2024-02-18T18:28:22.411699" elapsed="0.096898"/>
+</test>
+<test id="s1-t5" name="Verify the Next Screen After Click onto Login Button" line="16">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-18T18:28:22.509129" level="INFO">${expected_url} = https://www.saucedemo.com/inventory.html</msg>
+<var>${expected_url}</var>
+<arg>https://www.saucedemo.com/inventory.html</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.509129" elapsed="0.001009"/>
+</kw>
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2024-02-18T18:28:22.514168" level="INFO">${CURR_URL} = https://www.saucedemo.com/inventory.html</msg>
+<var>${CURR_URL}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.510138" elapsed="0.004552"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${expected_url}</arg>
+<arg>${CURR_URL}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.515212" elapsed="0.000000"/>
+</kw>
+<arg>10x</arg>
+<arg>3s</arg>
+<arg>Should Be Equal</arg>
+<arg>${expected_url}</arg>
+<arg>${CURR_URL}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.514690" elapsed="0.000522"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-18T18:28:22.515738" level="INFO">${expected_title} = Swag Labs</msg>
+<var>${expected_title}</var>
+<arg>Swag Labs</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.515738" elapsed="0.000000"/>
+</kw>
+<kw name="Get Title" owner="SeleniumLibrary">
+<msg time="2024-02-18T18:28:22.521917" level="INFO">${CURR_TITLE} = Swag Labs</msg>
+<var>${CURR_TITLE}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.516258" elapsed="0.005659"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${expected_title}</arg>
+<arg>${CURR_TITLE}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.521917" elapsed="0.000999"/>
+</kw>
+<arg>10x</arg>
+<arg>3s</arg>
+<arg>Should Be Equal</arg>
+<arg>${expected_title}</arg>
+<arg>${CURR_TITLE}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.521917" elapsed="0.000999"/>
+</kw>
+<status status="PASS" start="2024-02-18T18:28:22.509129" elapsed="0.013787"/>
+</test>
+<test id="s1-t6" name="Verify Cart Checkout" line="23">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id:add-to-cart-sauce-labs-backpack</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.523914" elapsed="0.010571"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-02-18T18:28:22.535019" level="INFO">Clicking button 'id:add-to-cart-sauce-labs-backpack'.</msg>
+<arg>id:add-to-cart-sauce-labs-backpack</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.534485" elapsed="0.056153"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>class:shopping_cart_link</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.591788" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-02-18T18:28:22.591788" level="INFO">Clicking element 'class:shopping_cart_link'.</msg>
+<arg>class:shopping_cart_link</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.591788" elapsed="0.051574"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id:checkout</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.643362" elapsed="0.010601"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-02-18T18:28:22.654972" level="INFO">Clicking button 'id:checkout'.</msg>
+<arg>id:checkout</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.654972" elapsed="0.052052"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-18T18:28:22.707024" level="INFO">${expected_url} = https://www.saucedemo.com/checkout-step-one.html</msg>
+<var>${expected_url}</var>
+<arg>https://www.saucedemo.com/checkout-step-one.html</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.707024" elapsed="0.000000"/>
+</kw>
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2024-02-18T18:28:22.707024" level="INFO">${CURR_URL} = https://www.saucedemo.com/checkout-step-one.html</msg>
+<var>${CURR_URL}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.707024" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${expected_url}</arg>
+<arg>${CURR_URL}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.707024" elapsed="0.000000"/>
+</kw>
+<arg>10x</arg>
+<arg>3s</arg>
+<arg>Should Be Equal</arg>
+<arg>${expected_url}</arg>
+<arg>${CURR_URL}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.707024" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-18T18:28:22.707024" level="INFO">${expected_title} = Swag Labs</msg>
+<var>${expected_title}</var>
+<arg>Swag Labs</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.707024" elapsed="0.000000"/>
+</kw>
+<kw name="Get Title" owner="SeleniumLibrary">
+<msg time="2024-02-18T18:28:22.707024" level="INFO">${CURR_TITLE} = Swag Labs</msg>
+<var>${CURR_TITLE}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.707024" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${expected_title}</arg>
+<arg>${CURR_TITLE}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.707024" elapsed="0.000000"/>
+</kw>
+<arg>10x</arg>
+<arg>3s</arg>
+<arg>Should Be Equal</arg>
+<arg>${expected_title}</arg>
+<arg>${CURR_TITLE}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.707024" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id:first-name</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.707024" elapsed="0.023677"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-02-18T18:28:22.731702" level="INFO">Typing text 'test' into text field 'id:first-name'.</msg>
+<arg>id:first-name</arg>
+<arg>test</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.731702" elapsed="0.073515"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id:last-name</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.805217" elapsed="0.009997"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-02-18T18:28:22.815214" level="INFO">Typing text 'test' into text field 'id:last-name'.</msg>
+<arg>id:last-name</arg>
+<arg>test</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.815214" elapsed="0.073321"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id:postal-code</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.888535" elapsed="0.008998"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-02-18T18:28:22.898533" level="INFO">Typing text 'test' into text field 'id:postal-code'.</msg>
+<arg>id:postal-code</arg>
+<arg>test</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.898533" elapsed="0.074413"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id:continue</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.972946" elapsed="0.009987"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-02-18T18:28:22.982933" level="INFO">Clicking button 'id:continue'.</msg>
+<arg>id:continue</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-18T18:28:22.982933" elapsed="0.053035"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-18T18:28:23.035968" level="INFO">${expected_url} = https://www.saucedemo.com/checkout-step-two.html</msg>
+<var>${expected_url}</var>
+<arg>https://www.saucedemo.com/checkout-step-two.html</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-02-18T18:28:23.035968" elapsed="0.000000"/>
+</kw>
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2024-02-18T18:28:23.040290" level="INFO">${CURR_URL} = https://www.saucedemo.com/checkout-step-two.html</msg>
+<var>${CURR_URL}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2024-02-18T18:28:23.035968" elapsed="0.004322"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${expected_url}</arg>
+<arg>${CURR_URL}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-02-18T18:28:23.040290" elapsed="0.000000"/>
+</kw>
+<arg>10x</arg>
+<arg>3s</arg>
+<arg>Should Be Equal</arg>
+<arg>${expected_url}</arg>
+<arg>${CURR_URL}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2024-02-18T18:28:23.040290" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id:finish</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-02-18T18:28:23.040290" elapsed="0.016904"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-02-18T18:28:23.058191" level="INFO">Clicking button 'id:finish'.</msg>
+<arg>id:finish</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-18T18:28:23.058191" elapsed="0.056372"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-18T18:28:23.114563" level="INFO">${expected_url} = https://www.saucedemo.com/checkout-complete.html</msg>
+<var>${expected_url}</var>
+<arg>https://www.saucedemo.com/checkout-complete.html</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-02-18T18:28:23.114563" elapsed="0.000000"/>
+</kw>
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2024-02-18T18:28:23.114563" level="INFO">${CURR_URL} = https://www.saucedemo.com/checkout-complete.html</msg>
+<var>${CURR_URL}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2024-02-18T18:28:23.114563" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${expected_url}</arg>
+<arg>${CURR_URL}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-02-18T18:28:23.114563" elapsed="0.000000"/>
+</kw>
+<arg>10x</arg>
+<arg>3s</arg>
+<arg>Should Be Equal</arg>
+<arg>${expected_url}</arg>
+<arg>${CURR_URL}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2024-02-18T18:28:23.114563" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id:back-to-products</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-02-18T18:28:23.121890" elapsed="0.010005"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-02-18T18:28:23.132896" level="INFO">Clicking button 'id:back-to-products'.</msg>
+<arg>id:back-to-products</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-18T18:28:23.132896" elapsed="0.069510"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-18T18:28:23.203407" level="INFO">${expected_url} = https://www.saucedemo.com/inventory.html</msg>
+<var>${expected_url}</var>
+<arg>https://www.saucedemo.com/inventory.html</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-02-18T18:28:23.203407" elapsed="0.000000"/>
+</kw>
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2024-02-18T18:28:23.208258" level="INFO">${CURR_URL} = https://www.saucedemo.com/inventory.html</msg>
+<var>${CURR_URL}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2024-02-18T18:28:23.204408" elapsed="0.003850"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${expected_url}</arg>
+<arg>${CURR_URL}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-02-18T18:28:23.208258" elapsed="0.000000"/>
+</kw>
+<arg>10x</arg>
+<arg>3s</arg>
+<arg>Should Be Equal</arg>
+<arg>${expected_url}</arg>
+<arg>${CURR_URL}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2024-02-18T18:28:23.208258" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-02-18T18:28:22.523914" elapsed="0.684344"/>
+</test>
+<status status="PASS" start="2024-02-18T18:28:17.841841" elapsed="5.366417"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="6" fail="0" skip="0" id="s1" name="Testcases">Testcases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

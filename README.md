@@ -16,3 +16,9 @@ SeleniumLibrary is a web testing library for Robot Framework. You can install it
 
 **Note**: if want to skip 1,2 point can install by using the requirements.txt file by using the command
     pip install -r requirements.txt
+
+How to Run cases
+    Run at once
+        1. Navigate to the folder named test_cases 
+        2. run the command robot .\testcases.robot
+
